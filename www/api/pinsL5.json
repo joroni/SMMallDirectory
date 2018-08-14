@@ -1,0 +1,44 @@
+{
+    "pins": [{
+        "aceInhibitors": [{
+            "name": "The Test1",
+            "level_loc": "5.01",
+            "top": "10",
+            "left": "10",
+            "logo_icon": "appleheart",
+            "storelabel": "The Test",
+            "datalevel": "1",
+            "datacategory": "5"
+        }],
+        "antianginal": [{
+            "name": "The Test2",
+            "level_loc": "5.02",
+            "top": "20",
+            "left": "30",
+            "logo_icon": "grass",
+            "storelabel": "The Test2",
+            "datalevel": "1",
+            "datacategory": "5"
+        }],
+        "anticoagulants": [{
+            "name": "The Test3",
+            "level_loc": "5.03",
+            "top": "51",
+            "left": "37",
+            "logo_icon": "shirt",
+            "storelabel": "The Test3",
+            "datalevel": "1",
+            "datacategory": "5"
+        }],
+        "betaBlocker": [{
+            "name": "The Test4",
+            "level_loc": "5.04",
+            "top": "15",
+            "left": "70",
+            "logo_icon": "star",
+            "storelabel": "The Test4",
+            "datalevel": "1",
+            "datacategory": "5"
+        }]
+    }]
+}
