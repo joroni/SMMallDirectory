@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body class="draggable">
     <svg class="hidden">
 			<defs>
 				<symbol id="icon-pin" viewBox="0 0 200 300">
@@ -3170,20 +3170,21 @@
             </div>
             <!-- /mall -->
 
-            <button class="boxbutton boxbutton--dark open-search" aria-label="Show search"><svg class="icon icon--search"><use xlink:href="#icon-search"></use></svg></button>
+            <button class="boxbutton boxbutton--light open-search" aria-label="Show search"><svg class="icon icon--search"><use xlink:href="#icon-search"></use></svg></button>
+            <nav class="mallcontrol mallnavs--hidden">
+                <button class="boxbutton mallnav__button p2dview">
+                        <svg class="explore-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z"/></svg></button>
+                <button class="boxbutton boxbutton--light p3dview hidden" aria-label="3D View"><svg class="icon icon--stack"><use xlink:href="#icon-stack"></use></svg></button>
+
+            </nav>
             <nav class="mallnav mallnav--hidden">
                 <button class="boxbutton mallnav__button--up" aria-label="Go up"><svg class="icon icon--angle-down"><use xlink:href="#icon-angle-up"></use></svg></button>
-                <button class="boxbutton boxbutton--dark mallnav__button--all-levels" aria-label="Back to all levels"><svg class="icon icon--stack"><use xlink:href="#icon-stack"></use></svg></button>
+                <button class="boxbutton boxbutton--light mallnav__button--all-levels" aria-label="Back to all levels"><svg class="icon icon--stack"><use xlink:href="#icon-stack"></use></svg></button>
                 <button class="boxbutton mallnav__button--down" aria-label="Go down"><svg class="icon icon--angle-down"><use xlink:href="#icon-angle-down"></use></svg></button>
             </nav>
 
-            <nav class="mallcontrol mallnavs--hidden">
-                <button class="boxbutton mallnav__button p2dview"><i class="material-icons">layers</i></button>
-                <button class="boxbutton boxbutton--dark p3dview hidden" aria-label="3D View"><svg class="icon icon--stack"><use xlink:href="#icon-stack"></use></svg></button>
-                <!--  <input type="button" value="+" class="boxbutton mallnav__button zoomin" />
-                <button class="boxbutton mallnav__button zoomreset"><i class="material-icons">replay</i></button>
-                <input type="button" value="-" class="boxbutton mallnav__button zoomout" />-->
-            </nav>
+
             <div class="content">
                 <div class="content__item" data-space="1.01" data-category="1">
                     <h3 class="content__item-title">Apple Heart</h3>
@@ -3500,7 +3501,7 @@
                         <p class="content__desc">Brassica oleracea phaseolus coccineus talinum fruticosum capsicum annuum cucurbita spp. Raphanus sativus Longipinnatus group cucurbita spp, moringa oleifera lathyrus sativus crithmum maritimum.</p>
                     </div>
                 </div>
-                <button class="boxbutton boxbutton--dark content__button content__button--hidden" aria-label="Close details"><svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
+                <button class="boxbutton boxbutton--light content__button close-button content__button--hidden" aria-label="Close details"><svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
             </div>
             <!-- content -->
         </div>
@@ -3508,7 +3509,7 @@
         <aside class="spaces-list" id="spaces-list">
             <div class="search">
                 <input class="search__input" placeholder="Search..." />
-                <button class="boxbutton boxbutton--darker close-search" aria-label="Close details"><svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
+                <button class="boxbutton boxbutton--lighter close-search" aria-label="Close details"><svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
             </div>
             <span class="label">
 					<input id="sort-by-name" class="label__checkbox" type="checkbox" aria-label="Show alphabetically"/>

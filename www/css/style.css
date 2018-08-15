@@ -178,6 +178,23 @@ button:focus {
     height: 100vh;
 }
 
+.draggable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.draggable input {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+}
+
 .mall.panleft {
     transform: translateY(8vmin);
 }
@@ -344,12 +361,12 @@ button:focus {
     line-height: 0;
     position: absolute;
     z-index: 100;
-    top: 0;
+    bottom: -5px;
     padding: 4vmin;
-    background: #fff;
+    background: rgb(152, 251, 152);
     left: 6.8em;
     white-space: nowrap;
-    color: #7d7d86;
+    color: #333;
     -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(5vmin);
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(5vmin);
     -webkit-transition: -webkit-transform 1s, color 0.3s;
@@ -363,6 +380,7 @@ button:focus {
     line-height: 0;
     position: fixed;
     z-index: 100;
+    max-height: 50px;
     top: 0;
     padding: 4vmin;
     background: #fff;
@@ -398,18 +416,13 @@ button:focus {
         transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     }*/
 
-.p2dview .level::after {
-    -webkit-transform: rotateZ(0deg) rotateX(0deg) translateZ(0vmin);
-    transform: rotateZ(0deg) rotateX(0deg) translateZ(0vmin);
-    -webkit-transition: -webkit-transform 1s, color 0.3s;
-    transition: transform 1s, color 0.3s;
-    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-}
-
 .level:hover::after,
 .level--current::after {
     color: #515158;
+    bottom: -70px;
+    transition-duration: 0.3s;
+    -webkit-transition: -webkit-transform 1s, color 0.3s;
+    transition: transform 1s, color 0.3s;
 }
 
 .level--current::after {
@@ -424,22 +437,37 @@ button:focus {
 
 .level--1::after {
     content: 'L1';
+    left: 100px;
+    -webkit-transition: -webkit-transform 1s, color 0.3s;
+    transition: transform 1s, color 0.3s;
 }
 
 .level--2::after {
     content: 'L2';
+    left: 140px;
+    -webkit-transition: -webkit-transform 1s, color 0.3s;
+    transition: transform 1s, color 0.3s;
 }
 
 .level--3::after {
     content: 'L3';
+    left: 180px;
+    -webkit-transition: -webkit-transform 1s, color 0.3s;
+    transition: transform 1s, color 0.3s;
 }
 
 .level--4::after {
     content: 'L4';
+    left: 220px;
+    -webkit-transition: -webkit-transform 1s, color 0.3s;
+    transition: transform 1s, color 0.3s;
 }
 
 .level--5::after {
     content: 'L5';
+    left: 260px;
+    -webkit-transition: -webkit-transform 1s, color 0.3s;
+    transition: transform 1s, color 0.3s;
 }
 
 
@@ -503,6 +531,8 @@ button:focus {
 .levels--selected-4 .level:not(.level--4),
 .levels--selected-5 .level:not(.level--5) {
     opacity: 0;
+    pointer-events: none;
+    /* transform: translateZ(-9999vmin);*/
     /* fade out all others */
 }
 
@@ -512,7 +542,6 @@ button:focus {
 .level--current~.level {
     -webkit-transform: translateZ(90vmin);
     transform: translateZ(90vmin);
-    display: none;
 }
 
 .levels--selected-2 .level--1,
@@ -585,6 +614,7 @@ button:focus {
     transition: transform 1s, opacity 1s;
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
+    botttom: -34px;
 }
 
 .levels--open .level.level--current {
@@ -608,8 +638,8 @@ button:focus {
 
 .mallcontrol {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: 50px;
+    right: 0;
     text-align: center;
     -webkit-transition: opacity 0.8s;
     transition: opacity 0.8s;
@@ -620,7 +650,7 @@ button:focus {
 
 .mallnav {
     position: absolute;
-    top: 0;
+    top: 10px;
     right: 0;
     text-align: center;
     -webkit-transition: opacity 0.8s;
@@ -638,13 +668,19 @@ button:focus {
 .boxbutton {
     font-size: 2em;
     display: block;
-    width: 2em;
-    height: 2em;
-    margin: 0;
+    border-radius: 50px;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 5px;
     padding: 0;
-    color: #fff;
+    color: #d7d7dc;
     border: 0;
-    background: #d7d7dc;
+    background: #fff;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+}
+
+.boxbutton--light {
+    background: #fff;
 }
 
 .boxbutton--dark {
@@ -748,9 +784,13 @@ button:focus {
     top: 0;
     width: 100%;
     height: 100%;
+    display: none;
     padding: 3em;
     text-align: center;
-    background: #d7d7dc;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.1);
+    background: #fff;
     -webkit-transition: -webkit-transform 0.8s;
     transition: transform 0.8s;
     -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
@@ -765,6 +805,7 @@ button:focus {
 .content__item--current {
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
+    display: block;
 }
 
 .content__item-title {
@@ -1063,8 +1104,8 @@ button:focus {
     width: 5.5vmin;
     height: 8.25vmin;
     margin: -8.25vmin 0 0 -2.25vmin;
-    -webkit-transform: rotateX(-60deg) rotateY(-30deg) rotateZ(12deg);
-    transform: rotateX(-60deg) rotateY(-30deg) rotateZ(12deg);
+    -webkit-transform: rotateX(-58deg) rotateY(-21deg) rotateZ(11deg);
+    transform: rotateX(-58deg) rotateY(-21deg) rotateZ(11deg);
     -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
     -webkit-transform-style: preserve-3d;
@@ -1367,27 +1408,27 @@ button:focus {
 
 .pin--4-1 {
     top: 55vmin;
-    left: 21vmin;
+    left: 49vmin;
 }
 
 .pin--4-2 {
-    top: 18vmin;
-    left: 20vmin;
+    top: 12vmin;
+    left: 30vmin;
 }
 
 .pin--4-3 {
     top: 21vmin;
-    left: 88vmin;
+    left: 57vmin;
 }
 
 .pin--4-4 {
-    top: 52vmin;
-    left: 74vmin;
+    top: 103vmin;
+    left: 47vmin;
 }
 
 .pin--4-5 {
     top: 33vmin;
-    left: 38vmin;
+    left: 48vmin;
 }
 
 .pin--4-6 {
@@ -1397,7 +1438,7 @@ button:focus {
 
 .pin--4-7 {
     top: 58vmin;
-    left: 10vmin;
+    left: 20vmin;
 }
 
 .homemall {
@@ -1420,7 +1461,7 @@ screen and (max-height: 320px) {
     .p2dview .levels {
         border: 1px solid rgba(255, 255, 255, 0.5);
         width: 65vmin;
-        height: 124vmin;
+        height: 135vmin;
         margin: -64% 0 0 -34%;
         -webkit-transition: -webkit-transform 0.3s;
         transition: transform 0.3s;
@@ -1430,8 +1471,8 @@ screen and (max-height: 320px) {
     .levels {
         border: 1px solid rgba(255, 255, 255, 0.5);
         width: 65vmin;
-        height: 124vmin;
-        margin: -56% 0 0 -42%;
+        height: 135vmin;
+        margin: -56% 0 0 -50%;
         -webkit-transition: -webkit-transform 0.3s;
         transition: transform 0.3s;
         -webkit-transform-style: preserve-3d;
@@ -1484,7 +1525,7 @@ screen and (max-height: 40.625em) {
         z-index: 1000;
     }
     .mallnav {
-        top: 4em;
+        top: 6.4em;
     }
     .container {
         overflow: hidden;
@@ -1534,4 +1575,17 @@ screen and (max-height: 40.625em) {
     margin-left: -40px;
     position: absolute;
     margin-right: -40px;
+}
+
+.close-button {
+    background: #fff !important;
+    color: #c4c4c7;
+}
+
+.p2dview {
+    color: #d7d7dc;
+}
+
+.p2dview svg.explore-icon {
+    fill: currentColor;
 }
