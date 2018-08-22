@@ -344,8 +344,8 @@ button:focus {
     height: 100%;
     position: absolute;
     width: 100%;
-    top: 32px;
-    left: -135px;
+    top: 0px;
+    left: 0px;
     cursor: pointer;
     pointer-events: auto;
     -webkit-transition: opacity 1s, -webkit-transform 1s;
@@ -361,7 +361,7 @@ button:focus {
     line-height: 0;
     position: absolute;
     z-index: 100;
-    bottom: -15px;
+    bottom: -25px;
     padding: 4vmin;
     background: rgb(152, 251, 152);
     left: 6.8em;
@@ -437,7 +437,7 @@ button:focus {
 
 .level--1::after {
     content: 'L1';
-    left: 60px;
+    left: 70px;
     -webkit-transition: -webkit-transform 1s, color 0.3s;
     transition: transform 1s, color 0.3s;
 }
@@ -451,21 +451,21 @@ button:focus {
 
 .level--3::after {
     content: 'L3';
-    left: 140px;
+    left: 130px;
     -webkit-transition: -webkit-transform 1s, color 0.3s;
     transition: transform 1s, color 0.3s;
 }
 
 .level--4::after {
     content: 'L4';
-    left: 180px;
+    left: 160px;
     -webkit-transition: -webkit-transform 1s, color 0.3s;
     transition: transform 1s, color 0.3s;
 }
 
 .level--5::after {
     content: 'L5';
-    left: 220px;
+    left: 190px;
     -webkit-transition: -webkit-transform 1s, color 0.3s;
     transition: transform 1s, color 0.3s;
 }
@@ -1104,8 +1104,8 @@ button:focus {
     width: 5.5vmin;
     height: 8.25vmin;
     margin: -8.25vmin 0 0 -2.25vmin;
-    -webkit-transform: rotateX(-58deg) rotateY(-21deg) rotateZ(11deg);
-    transform: rotateX(-58deg) rotateY(-21deg) rotateZ(11deg);
+    -webkit-transform: rotateX(-30deg) rotateY(0deg) rotateZ(22.5deg);
+    transform: rotateX(-30deg) rotateY(0deg) rotateZ(22.5deg);
     -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
     -webkit-transform-style: preserve-3d;
@@ -1213,6 +1213,15 @@ button:focus {
 .pin--active .icon--pin {
     stroke: #515158;
     stroke-width: 15px;
+   
+}
+
+.pin--active{
+position: absolute;
+top: 50%;
+left: 50%;
+margin-right: -50%;
+transform: translate(-50%, -50%);
 }
 
 .icon--pin {
@@ -1584,6 +1593,11 @@ screen and (max-height: 40.625em) {
 
 .p2dview {
     color: #d7d7dc;
+}
+
+
+.p2dview.active {
+    color: #333;
 }
 
 .p2dview svg.explore-icon {

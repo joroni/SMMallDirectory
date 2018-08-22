@@ -344,6 +344,7 @@
     p2dview.addEventListener('click', function(ev) {
         ev.preventDefault();
         mall.classList.toggle("p2dview");
+        p2dview.classList.toggle("active");
         // classie.remove(mallLevelsEl, 'p3dview');
         //classie.add(mallLevelsEl, 'p2dview');
     });
